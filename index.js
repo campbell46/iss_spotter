@@ -21,9 +21,12 @@ const printPassTimes = (passTimes => {
     console.log(`Next pass at ${dateTime} for ${duration} seconds!`);
   }
 });
+
 //takes in fly over times, if error it logs, otherwise passed to printPassTimes function
 nextISSTimesForMyLocation((error, passTimes) => {
   if (error) return console.log("It didn't work! ". error);
 
   printPassTimes(passTimes);
 });
+
+module.exports = { printPassTimes };
